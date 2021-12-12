@@ -32,6 +32,8 @@ import org.springframework.core.env.PropertyResolver;
 import org.springframework.core.style.ToStringCreator;
 
 /**
+ * 实现了EurekaServerConfig接口，相当于是什么，将spring boot风格的配置，
+ * application.yml风格的配置，全部用这个东西来表示配置相关的持有类以及加载。
  * @author Dave Syer
  * @author Gregor Zurowski
  */

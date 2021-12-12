@@ -72,6 +72,11 @@ import org.springframework.util.StringUtils;
 import static org.springframework.cloud.commons.util.IdUtils.getDefaultInstanceId;
 
 /**
+ * 完成了DiscoveryClient的构造和初始化，eureka client初始化和启动的流程，
+ * 全部在DiscoveryClient中的。EurekaDiscoveryClient，
+ * 自己对eureka原生的DiscoveryClient进行了一层封装和包装，
+ * 实现了eureka的DiscoveryClient接口，依赖了一个原生的EurekaClient。
+ * 提供了一些额外的方法的实现
  * @author Dave Syer
  * @author Spencer Gibb
  * @author Jon Schneider

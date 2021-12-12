@@ -1,0 +1,9 @@
+该项目作用是封装eureka-server项目
+
+EurekaServerInitializerConfiguration
+EurekaServerAutoConfiguration
+EurekaServerBootstrap
+
+这三个类基本可以启动起来原生的eureka server
+
+铜过注解来加载这几个类，来执行，思路不错哦

@@ -38,6 +38,10 @@ import static org.springframework.cloud.netflix.eureka.EurekaConstants.DEFAULT_P
 /**
  * Eureka client configuration bean.
  *
+ * 一看就是，用屁股想想，从application.yml中，将你的格式的配置项读取出来，
+ * 通过这个bean来对外提供所有的eureka client相关的配置项的读取。实现的就是EurekaClientConfig接口。
+ * EurekaInstanceConfigBean，同理，加载application.yml中的服务实例相关的配置项。
+ *
  * @author Dave Syer
  * @author Gregor Zurowski
  */

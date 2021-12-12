@@ -33,6 +33,8 @@ import org.springframework.core.Ordered;
 import org.springframework.web.context.ServletContextAware;
 
 /**
+ * 在spring boot启动之后，就会来执行这个东西的start()方法。启动一个后台线程，
+ * 完成了剩余的eureka server初始化的这么一个过程
  * @author Dave Syer
  */
 @Configuration(proxyBeanMethods = false)
@@ -64,6 +66,7 @@ public class EurekaServerInitializerConfiguration implements ServletContextAware
 	public void start() {
 		new Thread(() -> {
 			try {
+				//初始化eureka server启动类
 				// TODO: is this class even needed now?
 				eurekaServerBootstrap.contextInitialized(EurekaServerInitializerConfiguration.this.servletContext);
 				log.info("Started Eureka Server");

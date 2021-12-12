@@ -26,6 +26,8 @@ import org.springframework.context.annotation.Import;
 
 /**
  * Annotation to activate Eureka Server related configuration.
+ * 这个注解实际上来说就在spring boot跑起来一个内嵌的tomcat容器之后，
+ * 就将eureka server在tomcat内部给启动起来了
  * {@link EurekaServerAutoConfiguration}
  *
  * @author Dave Syer

@@ -39,6 +39,8 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEvent;
 
 /**
+ * 是对注册表，进行了薄薄的一层封装，在注册、下线的时候，会先通过这个类执行一下简单的逻辑，
+ * 然后将请求转发给eureka自己的注册表类，PeerAwareInstanceRegistryImpl类
  * @author Spencer Gibb
  */
 public class InstanceRegistry extends PeerAwareInstanceRegistryImpl implements ApplicationContextAware {
