@@ -97,6 +97,12 @@ public class EurekaRibbonClientConfiguration {
 		return ping;
 	}
 
+	/**
+	 * 这里返回的ServerList Bean 初始化的地方 serverListImp变量
+	 * @param config
+	 * @param eurekaClientProvider
+	 * @return
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public ServerList<?> ribbonServerList(IClientConfig config, Provider<EurekaClient> eurekaClientProvider) {

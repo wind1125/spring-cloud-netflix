@@ -72,6 +72,7 @@ public class RibbonClientConfiguration {
 	public static final int DEFAULT_CONNECT_TIMEOUT = 1000;
 	public static final int DEFAULT_READ_TIMEOUT = 1000;
 
+	//服务名称
 	@Value("${ribbon.client.name}")
 	private String name = "client";
 
@@ -111,6 +112,11 @@ public class RibbonClientConfiguration {
 		return new DummyPing();
 	}
 
+	/**
+	 * 结合eureka 不是这里
+	 * @param config
+	 * @return
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	@SuppressWarnings("unchecked")
@@ -129,6 +135,17 @@ public class RibbonClientConfiguration {
 		return new PollingServerListUpdater(config);
 	}
 
+	/**
+	 * Ribbon的负载均衡接口ILoadBalancer  是在这里给初始化的
+	 * 在 RibbonLoadBalancerClient#getLoadBalancer()方法中根据服务名字获取实例
+	 * @param config
+	 * @param serverList 拉取服务的接口 在哪里初始化的bean需要好好找找？
+	 * @param serverListFilter
+	 * @param rule
+	 * @param ping
+	 * @param serverListUpdater
+	 * @return
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public ILoadBalancer ribbonLoadBalancer(IClientConfig config,
