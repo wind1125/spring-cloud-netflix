@@ -109,6 +109,7 @@ public class EurekaRibbonClientConfiguration {
 		if (this.propertiesFactory.isSet(ServerList.class, serviceId)) {
 			return this.propertiesFactory.get(ServerList.class, config, serviceId);
 		}
+		//ribbon和eureka整合用的这个实例对象，从里面的obtainServersViaDiscovery()方法获取
 		DiscoveryEnabledNIWSServerList discoveryServerList = new DiscoveryEnabledNIWSServerList(
 				config, eurekaClientProvider);
 		DomainExtractingServerList serverList = new DomainExtractingServerList(

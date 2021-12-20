@@ -129,6 +129,11 @@ public class RibbonClientConfiguration {
 		return serverList;
 	}
 
+	/**
+	 * ribbonLoadBalancer方法中serverList参数的实例对象
+	 * @param config
+	 * @return
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public ServerListUpdater ribbonServerListUpdater(IClientConfig config) {
@@ -139,7 +144,7 @@ public class RibbonClientConfiguration {
 	 * Ribbon的负载均衡接口ILoadBalancer  是在这里给初始化的
 	 * 在 RibbonLoadBalancerClient#getLoadBalancer()方法中根据服务名字获取实例
 	 * @param config
-	 * @param serverList 拉取服务的接口 在哪里初始化的bean需要好好找找？
+	 * @param serverList 拉取服务的接口 在哪里初始化的bean需要好好找找？ PollingServerListUpdater
 	 * @param serverListFilter
 	 * @param rule
 	 * @param ping
@@ -154,6 +159,7 @@ public class RibbonClientConfiguration {
 		if (this.propertiesFactory.isSet(ILoadBalancer.class, name)) {
 			return this.propertiesFactory.get(ILoadBalancer.class, config, name);
 		}
+		//从这里开始初始化ILoadBalancer实例对象
 		return new ZoneAwareLoadBalancer<>(config, rule, ping, serverList,
 				serverListFilter, serverListUpdater);
 	}
