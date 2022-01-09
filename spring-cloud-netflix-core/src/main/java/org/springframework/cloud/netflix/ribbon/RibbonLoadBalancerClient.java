@@ -95,6 +95,7 @@ public class RibbonLoadBalancerClient implements LoadBalancerClient {
 		RibbonStatsRecorder statsRecorder = new RibbonStatsRecorder(context, server);
 
 		try {
+			//这里会发起真正请求
 			T returnVal = request.apply(serviceInstance);
 			statsRecorder.recordStats(returnVal);
 			return returnVal;

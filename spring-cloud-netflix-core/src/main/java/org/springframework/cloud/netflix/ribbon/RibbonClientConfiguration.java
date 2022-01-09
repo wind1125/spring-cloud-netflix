@@ -92,6 +92,11 @@ public class RibbonClientConfiguration {
 		return config;
 	}
 
+	/**
+	 * 创建选择服务器的规则实例对象
+	 * @param config
+	 * @return
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	public IRule ribbonRule(IClientConfig config) {

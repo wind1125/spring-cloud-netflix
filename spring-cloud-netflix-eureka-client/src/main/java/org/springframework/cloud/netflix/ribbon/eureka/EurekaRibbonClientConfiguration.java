@@ -50,6 +50,8 @@ import static org.springframework.cloud.netflix.ribbon.RibbonUtils.setRibbonProp
  * <code>@zone</code>, NIWSServerListClassName, DeploymentContextBasedVipAddresses,
  * NFLoadBalancerRuleClassName, NIWSServerListFilterClassName and more
  *
+ * ribbon 与 eureka 整合的代码
+ *
  * @author Spencer Gibb
  * @author Dave Syer
  * @author Ryan Baxter
