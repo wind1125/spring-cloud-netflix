@@ -56,6 +56,7 @@ import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
 
 /**
+ * feign整合的入口类
  * @author Spencer Gibb
  * @author Jakub Narloch
  * @author Venil Noronha
